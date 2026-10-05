@@ -2,9 +2,8 @@ package no.hvl.dat100.matriser;
 
 public class Matriser {
 
-    // a)
+    // a) Skriv ut matrise
     public static void skrivUt(int[][] matrise) {
-
         for (int[] rad : matrise) {
             for (int tall : rad) {
                 System.out.print(tall + " ");
@@ -13,9 +12,8 @@ public class Matriser {
         }
     }
 
-    // b)
+    // b) Gjør matrise om til tekst
     public static String tilStreng(int[][] matrise) {
-
         String tekst = "";
 
         for (int[] rad : matrise) {
@@ -26,16 +24,14 @@ public class Matriser {
                     tekst += " ";
                 }
             }
-
             tekst += "\n";
         }
 
         return tekst;
     }
 
-    // c)
+    // c) Skaler matrise
     public static int[][] skaler(int tall, int[][] matrise) {
-
         int[][] resultat = new int[matrise.length][];
 
         for (int i = 0; i < matrise.length; i++) {
@@ -49,21 +45,18 @@ public class Matriser {
         return resultat;
     }
 
-    // d)
+    // d) Sjekk om to matriser er like
     public static boolean erLik(int[][] a, int[][] b) {
-
         if (a.length != b.length) {
             return false;
         }
 
         for (int i = 0; i < a.length; i++) {
-
             if (a[i].length != b[i].length) {
                 return false;
             }
 
             for (int j = 0; j < a[i].length; j++) {
-
                 if (a[i][j] != b[i][j]) {
                     return false;
                 }
@@ -73,9 +66,8 @@ public class Matriser {
         return true;
     }
 
-    // e)
+    // e) Speil matrise
     public static int[][] speile(int[][] matrise) {
-
         int n = matrise.length;
         int[][] resultat = new int[n][n];
 
@@ -88,14 +80,12 @@ public class Matriser {
         return resultat;
     }
 
-    // f)
+    // f) Multipliser matriser
     public static int[][] multipliser(int[][] a, int[][] b) {
-
         int[][] resultat = new int[a.length][b[0].length];
 
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < b[0].length; j++) {
-
                 for (int k = 0; k < b.length; k++) {
                     resultat[i][j] += a[i][k] * b[k][j];
                 }
