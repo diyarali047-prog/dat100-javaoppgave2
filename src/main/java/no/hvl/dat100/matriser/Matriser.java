@@ -19,9 +19,14 @@ public class Matriser {
         String tekst = "";
 
         for (int[] rad : matrise) {
-            for (int tall : rad) {
-                tekst += tall + " ";
+            for (int i = 0; i < rad.length; i++) {
+                tekst += rad[i];
+
+                if (i < rad.length - 1) {
+                    tekst += " ";
+                }
             }
+
             tekst += "\n";
         }
 
@@ -68,13 +73,35 @@ public class Matriser {
         return true;
     }
 
-    // e) Valgfri
+    // e)
     public static int[][] speile(int[][] matrise) {
-        throw new UnsupportedOperationException("Metoden speile ikke implementert");
+
+        int n = matrise.length;
+        int[][] resultat = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                resultat[j][i] = matrise[i][j];
+            }
+        }
+
+        return resultat;
     }
 
-    // f) Valgfri
+    // f)
     public static int[][] multipliser(int[][] a, int[][] b) {
-        throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
+
+        int[][] resultat = new int[a.length][b[0].length];
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b[0].length; j++) {
+
+                for (int k = 0; k < b.length; k++) {
+                    resultat[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+
+        return resultat;
     }
 }
