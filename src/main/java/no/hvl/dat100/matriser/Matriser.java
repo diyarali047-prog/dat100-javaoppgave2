@@ -2,51 +2,79 @@ package no.hvl.dat100.matriser;
 
 public class Matriser {
 
-	// a)
-	public static void skrivUt(int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
-	}
+    // a)
+    public static void skrivUt(int[][] matrise) {
 
-	// b)
-	public static String tilStreng(int[][] matrise) {
+        for (int[] rad : matrise) {
+            for (int tall : rad) {
+                System.out.print(tall + " ");
+            }
+            System.out.println();
+        }
+    }
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
-	}
+    // b)
+    public static String tilStreng(int[][] matrise) {
 
-	// c)
-	public static int[][] skaler(int tall, int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
-	}
+        String tekst = "";
 
-	// d)
-	public static boolean erLik(int[][] a, int[][] b) {
+        for (int[] rad : matrise) {
+            for (int tall : rad) {
+                tekst += tall + " ";
+            }
+            tekst += "\n";
+        }
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
-		
-	}
-	
-	// e)
-	public static int[][] speile(int[][] matrise) {
+        return tekst;
+    }
 
-		// TODO
+    // c)
+    public static int[][] skaler(int tall, int[][] matrise) {
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
-	}
+        int[][] resultat = new int[matrise.length][];
 
-	// f)
-	public static int[][] multipliser(int[][] a, int[][] b) {
+        for (int i = 0; i < matrise.length; i++) {
+            resultat[i] = new int[matrise[i].length];
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-	
-	}
+            for (int j = 0; j < matrise[i].length; j++) {
+                resultat[i][j] = matrise[i][j] * tall;
+            }
+        }
+
+        return resultat;
+    }
+
+    // d)
+    public static boolean erLik(int[][] a, int[][] b) {
+
+        if (a.length != b.length) {
+            return false;
+        }
+
+        for (int i = 0; i < a.length; i++) {
+
+            if (a[i].length != b[i].length) {
+                return false;
+            }
+
+            for (int j = 0; j < a[i].length; j++) {
+
+                if (a[i][j] != b[i][j]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    // e) Valgfri
+    public static int[][] speile(int[][] matrise) {
+        throw new UnsupportedOperationException("Metoden speile ikke implementert");
+    }
+
+    // f) Valgfri
+    public static int[][] multipliser(int[][] a, int[][] b) {
+        throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
+    }
 }
