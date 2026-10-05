@@ -26,7 +26,7 @@ for (int i = 0; i < tabell.length; i++) {
 tekst += "]";
 
 return tekst;
-
+}
 	// c)
 	public static int summer(int[] tabell) {
 
